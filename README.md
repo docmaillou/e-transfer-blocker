@@ -1,1 +1,109 @@
-# e-transfer-blocker
+PRD: E-Transfer Blocker App (Desktop)
+1. Purpose
+To protect users from making unauthorized or impulsive e-transfers on their personal computer by actively blocking, monitoring, and restricting any attempt to initiate an e-transfer transaction through banking websites, banking apps, or other online financial platforms.
+
+2. Problem Statement
+Users may accidentally or impulsively send e-transfers on their PC, which can result in fraud, financial mistakes, or unapproved spending. There is currently no dedicated app to restrict or control e-transfer operations on a personal computer.
+
+3. Goals
+✅ Block any attempt to initiate an e-transfer on a PC
+✅ Allow customizable settings to whitelist specific, approved transfers if needed
+✅ Provide a secure admin override option
+✅ Maintain a log of blocked attempts for transparency
+✅ Operate with minimal system resource usage
+✅ Ensure tamper-resistance so the user cannot easily disable it
+
+4. Features
+4.1 Blocking Capabilities
+Intercepts network traffic or browser requests to known banking portals
+
+Detects patterns consistent with e-transfer initiation (e.g., known URL patterns, form field submissions)
+
+Terminates or blocks the page/process if an e-transfer is detected
+
+4.2 Notifications
+Instant pop-up to inform the user that an e-transfer attempt has been blocked
+
+Optional email notification to the user or a trusted contact
+
+4.3 Whitelisting
+Admin can whitelist specific recipient accounts or banking sites under strict conditions
+
+All whitelisting is password-protected with optional multi-factor authentication
+
+4.4 Logs
+Keeps a secure, encrypted log of:
+
+Date/time of attempted e-transfer
+
+Site/application involved
+
+Amount attempted (if detected)
+
+Log is only viewable with admin rights
+
+4.5 Override Controls
+Override feature requiring a secure PIN, password, or biometric
+
+Can optionally enforce a cooldown period before allowing overrides
+
+Alerts trusted contacts if an override is used
+
+4.6 Security
+Application hard to uninstall without master password
+
+Encrypted settings
+
+Obfuscation to prevent tampering
+
+5. Non-Functional Requirements
+Compatible with Windows (initially)
+
+Low CPU and RAM footprint
+
+Uses secure and up-to-date cryptography
+
+Easy to install, but hard to remove without the proper credentials
+
+Compliant with privacy regulations (no personal banking data stored beyond logs of blocked attempts)
+
+6. User Stories
+✅ As a user, I want to prevent myself from sending e-transfers on my PC so I can protect my finances.
+✅ As an admin, I want to whitelist specific e-transfer transactions if needed so I don’t block legitimate use.
+✅ As a security-conscious user, I want to be alerted when an override occurs so I can spot fraud.
+
+7. Success Metrics
+95% of attempted e-transfers successfully blocked
+
+Zero unauthorized overrides
+
+Minimal false positives (not blocking non-financial traffic)
+
+User satisfaction above 4/5 in post-launch survey
+
+8. Constraints
+Must support major Canadian banking portals (TD, RBC, Scotiabank, etc.)
+
+Should not conflict with other antivirus or endpoint security
+
+Should follow strict software security best practices
+
+9. Roadmap
+✅ Phase 1 – MVP
+
+Basic blocking of e-transfer forms and known URLs
+
+Basic override with password
+
+✅ Phase 2 – Advanced security
+
+Biometric support
+
+Trusted contact notifications
+
+✅ Phase 3 – Enterprise / Family mode
+
+Centralized management of multiple PCs
+
+Advanced reporting
+
