@@ -1,0 +1,64 @@
+{
+  "manifest_version": 3,
+  "name": "E-Transfer Blocker",
+  "version": "1.0.0",
+  "description": "Blocks unauthorized e-transfer attempts on banking websites",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "declarativeNetRequest",
+    "notifications",
+    "tabs"
+  ],
+  "host_permissions": [
+    "*://*.td.com/*",
+    "*://*.rbc.com/*",
+    "*://*.scotiabank.com/*",
+    "*://*.bmo.com/*",
+    "*://*.cibc.com/*",
+    "*://*.tangerine.ca/*",
+    "*://*.pcfinancial.ca/*",
+    "*://*.desjardins.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.td.com/*",
+        "*://*.rbc.com/*",
+        "*://*.scotiabank.com/*",
+        "*://*.bmo.com/*",
+        "*://*.cibc.com/*",
+        "*://*.tangerine.ca/*",
+        "*://*.pcfinancial.ca/*",
+        "*://*.desjardins.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "E-Transfer Blocker"
+  },
+  "options_page": "options.html",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "etransfer_rules",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}
