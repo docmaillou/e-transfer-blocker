@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 PRD: E-Transfer Blocker App (Desktop)
 1. Purpose
 To protect users from making unauthorized or impulsive e-transfers on their personal computer by actively blocking, monitoring, and restricting any attempt to initiate an e-transfer transaction through banking websites, banking apps, or other online financial platforms.
